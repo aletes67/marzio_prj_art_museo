@@ -1,32 +1,36 @@
-[gd_scene load_steps=10 format=3 uid="uid://bkvbobtypfnqd"]
+[gd_scene load_steps=7 format=3 uid="uid://bkvbobtypfnqd"]
 
 [ext_resource type="PackedScene" uid="uid://dtdrl4ax8eye" path="res://models/lavoroautoritratto.glb" id="1_a202f"]
 [ext_resource type="PackedScene" uid="uid://co6lpdtipk1t2" path="res://player.tscn" id="2_noarx"]
 [ext_resource type="Script" uid="uid://bmmt000fjr340" path="res://script/script_popup.gd" id="2_r3fl7"]
 [ext_resource type="Material" uid="uid://7l4g8onkwk35" path="res://new_panorama_sky_material.tres" id="3_a0tk4"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_noarx"]
-
-[sub_resource type="Sky" id="Sky_a0tk4"]
-sky_material = SubResource("ProceduralSkyMaterial_noarx")
-
-[sub_resource type="Environment" id="Environment_r3fl7"]
-background_mode = 1
-sky = SubResource("Sky_a0tk4")
-
 [sub_resource type="Sky" id="Sky_r3fl7"]
 sky_material = ExtResource("3_a0tk4")
 
-[sub_resource type="Environment" id="Environment_i5arm"]
+[sub_resource type="Environment" id="Environment_jka67"]
 background_mode = 2
 sky = SubResource("Sky_r3fl7")
-ambient_light_color = Color(0.993113, 0.993319, 0.994197, 0.85098)
-tonemap_exposure = 6.51
 
 [node name="Node3D" type="Node3D"]
 
 [node name="lavoroautoritratto" parent="." instance=ExtResource("1_a202f")]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, -1, -1)
+
+[node name="Cubo_001" parent="lavoroautoritratto" index="2"]
+script = ExtResource("2_r3fl7")
+
+[node name="Cubo_004" parent="lavoroautoritratto" index="3"]
+script = ExtResource("2_r3fl7")
+
+[node name="Cubo_005" parent="lavoroautoritratto" index="4"]
+script = ExtResource("2_r3fl7")
+
+[node name="Cubo_006" parent="lavoroautoritratto" index="5"]
+script = ExtResource("2_r3fl7")
+
+[node name="Cubo_007" parent="lavoroautoritratto" index="6"]
+script = ExtResource("2_r3fl7")
 
 [node name="Cubo_008" parent="lavoroautoritratto" index="7"]
 script = ExtResource("2_r3fl7")
@@ -36,9 +40,26 @@ info_testo = "Faccia di uno che conosco"
 script = ExtResource("2_r3fl7")
 info_testo = "Il bosco davanti la mia finestra"
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="lavoroautoritratto"]
-editor_description = "	"
-environment = SubResource("Environment_r3fl7")
+[node name="Cubo_010" parent="lavoroautoritratto" index="9"]
+script = ExtResource("2_r3fl7")
+
+[node name="Cubo_011" parent="lavoroautoritratto" index="10"]
+script = ExtResource("2_r3fl7")
+
+[node name="Cubo_013" parent="lavoroautoritratto" index="11"]
+script = ExtResource("2_r3fl7")
+
+[node name="Cubo_002" parent="lavoroautoritratto" index="12"]
+script = ExtResource("2_r3fl7")
+
+[node name="Cubo_003" parent="lavoroautoritratto" index="13"]
+script = ExtResource("2_r3fl7")
+
+[node name="Cubo_012" parent="lavoroautoritratto" index="14"]
+script = ExtResource("2_r3fl7")
+
+[node name="Cubo_014" parent="lavoroautoritratto" index="15"]
+script = ExtResource("2_r3fl7")
 
 [node name="VoxelGI" type="VoxelGI" parent="lavoroautoritratto"]
 transform = Transform3D(0.01, -2.34518e-11, 2.1259e-30, 2.34518e-11, 0.01, 8.40779e-45, -2.1259e-30, 4.98561e-39, 0.01, -0.005, 0.03, 1.06295e-30)
@@ -80,10 +101,10 @@ omni_range = 27.533
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.8, -17)
 speed = 7.0
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_i5arm")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.304001, 0.420581, -0.854807, 0.283005, -0.896637, -0.340515, -0.909666, -0.138398, -0.391605, 11, -1, 10)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jka67")
 
 [editable path="lavoroautoritratto"]

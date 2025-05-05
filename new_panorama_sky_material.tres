@@ -3,5 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cl8ppxrjaluo6" path="res://rainforest_trail_4k.exr" id="1_kl454"]
 
 [resource]
+resource_local_to_scene = true
 panorama = ExtResource("1_kl454")
-energy_multiplier = 38.85
+filter = false
+energy_multiplier = 0.03

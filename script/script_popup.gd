@@ -71,8 +71,8 @@ func _process(_delta):
 	ray_params.collide_with_areas = true
 
 	var result = get_world_3d().direct_space_state.intersect_ray(ray_params)
-	if result:
-		print("Ray ha colpito:", result.collider.name)
+	#if result:
+	#	print("Ray ha colpito:", result.collider.name)
 	if result and result.collider.get_parent() == self and global_transform.origin.distance_to(player.global_transform.origin) < distanza_interazione:
 		quadro_mesh.set_surface_override_material(0, highlight_material)
 	else:
