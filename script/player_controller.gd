@@ -8,8 +8,15 @@ extends CharacterBody3D
 @onready var camera = $Camera3D
 
 func _ready():
-	# Blocca il cursore del mouse al centro dello schermo
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	camera.current = true
+	
+func _unhandled_input(event):
+	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event):
 	# Gestione rotazione della telecamera con il mouse

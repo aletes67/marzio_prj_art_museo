@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dtdrl4ax8eye" path="res://models/lavoroautoritratto.glb" id="1_a202f"]
 [ext_resource type="PackedScene" uid="uid://co6lpdtipk1t2" path="res://player.tscn" id="2_noarx"]
+[ext_resource type="Script" uid="uid://bmmt000fjr340" path="res://script/cubo_009_iniziale.gd" id="2_r3fl7"]
+[ext_resource type="Material" uid="uid://7l4g8onkwk35" path="res://new_panorama_sky_material.tres" id="3_a0tk4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_noarx"]
 
@@ -12,25 +14,22 @@ sky_material = SubResource("ProceduralSkyMaterial_noarx")
 background_mode = 1
 sky = SubResource("Sky_a0tk4")
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_noarx"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_noarx"]
-
 [sub_resource type="Sky" id="Sky_r3fl7"]
-sky_material = SubResource("PanoramaSkyMaterial_noarx")
+sky_material = ExtResource("3_a0tk4")
 
-[sub_resource type="Environment" id="Environment_jka67"]
+[sub_resource type="Environment" id="Environment_i5arm"]
 background_mode = 2
-background_energy_multiplier = 10.88
 sky = SubResource("Sky_r3fl7")
-ambient_light_source = 3
-ambient_light_color = Color(0.95158, 0.95158, 0.95158, 1)
-ambient_light_energy = 16.0
+ambient_light_color = Color(0.993113, 0.993319, 0.994197, 0.85098)
+tonemap_exposure = 6.51
 
 [node name="Node3D" type="Node3D"]
 
 [node name="lavoroautoritratto" parent="." instance=ExtResource("1_a202f")]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, -1, -1)
+
+[node name="Cubo_009" parent="lavoroautoritratto" index="8"]
+script = ExtResource("2_r3fl7")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="lavoroautoritratto"]
 editor_description = "	"
@@ -40,19 +39,8 @@ environment = SubResource("Environment_r3fl7")
 transform = Transform3D(0.01, -2.34518e-11, 2.1259e-30, 2.34518e-11, 0.01, 8.40779e-45, -2.1259e-30, 4.98561e-39, 0.01, -0.005, 0.03, 1.06295e-30)
 size = Vector3(33, 7, 20)
 
-[node name="PointLight2D" type="PointLight2D" parent="lavoroautoritratto"]
-position = Vector2(595, 327.5)
-scale = Vector2(2.30078, 1.25586)
-energy = 10.11
-texture = SubResource("NoiseTexture2D_noarx")
-
-[node name="SpotLight3D" type="SpotLight3D" parent="lavoroautoritratto"]
-transform = Transform3D(0.01, 0, 0, 0, 0.005, 0, 0, 0, 0.01, 0, 0, 0)
-spot_range = 9.0
-spot_angle = 89.99
-
 [node name="OmniLight3D" type="OmniLight3D" parent="lavoroautoritratto"]
-transform = Transform3D(0.01, -3.97499e-11, -1.58763e-19, 3.97499e-11, 0.01, -1.33587e-11, 2.11864e-19, 1.33587e-11, 0.01, 0.11, 0.05, 0.03)
+transform = Transform3D(0.01, -3.97499e-11, -1.58763e-19, 3.97499e-11, 0.01, -1.33587e-11, 2.11864e-19, 1.33587e-11, 0.01, 0.12, 0.05, 0.03)
 light_energy = 11.182
 light_indirect_energy = 3.182
 shadow_enabled = true
@@ -60,8 +48,8 @@ distance_fade_enabled = true
 omni_range = 17.0
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="lavoroautoritratto"]
-transform = Transform3D(0.01, -3.97499e-11, -1.58763e-19, 3.97499e-11, 0.01, -1.33587e-11, 2.11864e-19, 1.33587e-11, 0.01, -0.01, 0.06, 0.08)
-light_energy = 11.182
+transform = Transform3D(0.01, -3.97499e-11, -1.58763e-19, 3.97499e-11, 0.01, -1.33587e-11, 2.11864e-19, 1.33587e-11, 0.01, -0.01, 0.1, 0.05)
+light_energy = 8.03
 light_indirect_energy = 3.182
 omni_range = 17.0
 
@@ -72,30 +60,25 @@ light_indirect_energy = 3.182
 omni_range = 17.0
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="lavoroautoritratto"]
-transform = Transform3D(0.01, -3.97499e-11, -1.58763e-19, 3.97499e-11, 0.01, -1.33587e-11, 2.11864e-19, 1.33587e-11, 0.01, -0.11, 0.06, -0.08)
+transform = Transform3D(0.01, -3.97499e-11, -1.58763e-19, 3.97499e-11, 0.01, -1.33587e-11, 2.11864e-19, 1.33587e-11, 0.01, -0.14, 0.06, -0.09)
 light_energy = 11.182
 light_indirect_energy = 3.182
 omni_range = 17.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="lavoroautoritratto"]
 transform = Transform3D(0.01, -3.97499e-11, -1.58763e-19, 3.97499e-11, 0.01, -1.33587e-11, 2.11864e-19, 1.33587e-11, 0.01, -0.14, 0.04, 0.07)
-light_energy = 11.182
+light_energy = 5.606
 light_indirect_energy = 3.182
 omni_range = 27.533
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="lavoroautoritratto"]
-transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.11, 0.03, 0.07)
-spot_range = 10.0
-spot_angle = 46.2454
-
 [node name="Player" parent="." instance=ExtResource("2_noarx")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.8, -17)
+speed = 7.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_jka67")
+environment = SubResource("Environment_i5arm")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.866025, -0.353553, 0.353553, 0, 0.707107, 0.707107, -0.5, -0.612372, 0.612372, 0, 0, 0)
-light_energy = 1.5
-shadow_enabled = true
-shadow_bias = 0.05
+transform = Transform3D(0.304001, 0.420581, -0.854807, 0.283005, -0.896637, -0.340515, -0.909666, -0.138398, -0.391605, 11, -1, 10)
+
+[editable path="lavoroautoritratto"]
