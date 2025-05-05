@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dtdrl4ax8eye" path="res://models/lavoroautoritratto.glb" id="1_a202f"]
 [ext_resource type="PackedScene" uid="uid://co6lpdtipk1t2" path="res://player.tscn" id="2_noarx"]
-[ext_resource type="Script" uid="uid://bmmt000fjr340" path="res://script/cubo_009_iniziale.gd" id="2_r3fl7"]
+[ext_resource type="Script" uid="uid://bmmt000fjr340" path="res://script/script_popup.gd" id="2_r3fl7"]
 [ext_resource type="Material" uid="uid://7l4g8onkwk35" path="res://new_panorama_sky_material.tres" id="3_a0tk4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_noarx"]
@@ -28,8 +28,13 @@ tonemap_exposure = 6.51
 [node name="lavoroautoritratto" parent="." instance=ExtResource("1_a202f")]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, -1, -1)
 
+[node name="Cubo_008" parent="lavoroautoritratto" index="7"]
+script = ExtResource("2_r3fl7")
+info_testo = "Faccia di uno che conosco"
+
 [node name="Cubo_009" parent="lavoroautoritratto" index="8"]
 script = ExtResource("2_r3fl7")
+info_testo = "Il bosco davanti la mia finestra"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="lavoroautoritratto"]
 editor_description = "	"
