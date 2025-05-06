@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkvbobtypfnqd"]
+[gd_scene load_steps=8 format=3 uid="uid://bkvbobtypfnqd"]
 
 [ext_resource type="PackedScene" uid="uid://dtdrl4ax8eye" path="res://models/lavoroautoritratto.glb" id="1_a202f"]
 [ext_resource type="PackedScene" uid="uid://co6lpdtipk1t2" path="res://player.tscn" id="2_noarx"]
 [ext_resource type="Script" uid="uid://bmmt000fjr340" path="res://script/script_popup.gd" id="2_r3fl7"]
 [ext_resource type="Material" uid="uid://7l4g8onkwk35" path="res://new_panorama_sky_material.tres" id="3_a0tk4"]
+[ext_resource type="AudioStream" uid="uid://filxamtg5xwm" path="res://sound/04 - Meditation #1.mp3" id="5_jka67"]
 
 [sub_resource type="Sky" id="Sky_r3fl7"]
 sky_material = ExtResource("3_a0tk4")
@@ -106,5 +107,9 @@ transform = Transform3D(0.304001, 0.420581, -0.854807, 0.283005, -0.896637, -0.3
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jka67")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jka67")
+autoplay = true
 
 [editable path="lavoroautoritratto"]

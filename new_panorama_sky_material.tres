@@ -6,4 +6,4 @@
 resource_local_to_scene = true
 panorama = ExtResource("1_kl454")
 filter = false
-energy_multiplier = 0.03
+energy_multiplier = 0.02
